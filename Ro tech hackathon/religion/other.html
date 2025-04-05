@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spiritual Companion - SeniorMate</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Custom styles for "Other" mode */
+    .other-theme {
+      background-color: #f8f9fa;
+    }
+    .other-theme .card {
+      background-color: #fff;
+      border: 1px solid #6c757d;
+    }
+    .universal-quote {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #495057;
+      border-left: 3px solid #6c757d;
+      padding-left: 1rem;
+    }
+  </style>
+</head>
+<body class="other-theme">
+  <div class="container">
+    <h1>Spiritual Companion</h1>
+    <p class="subtitle">Universal wisdom for your journey</p>
+
+    <div class="grid">
+      <div class="card" onclick="showDailyInspiration()">
+        <img src="../assets/inspiration.png" alt="Daily Inspiration">
+        <h3>Daily Inspiration</h3>
+        <p>Thought-provoking quotes</p>
+      </div>
+      
+      <div class="card" onclick="showMindfulness()">
+        <img src="../assets/mindfulness.png" alt="Mindfulness">
+        <h3>Mindfulness</h3>
+        <p>Meditation guides</p>
+      </div>
+
+      <div class="card" onclick="showPhilosophy()">
+        <img src="../assets/philosophy.png" alt="Philosophy">
+        <h3>Wisdom Traditions</h3>
+        <p>Teachings from global thinkers</p>
+      </div>
+
+      <div class="card" onclick="showGratitude()">
+        <img src="../assets/gratitude.png" alt="Gratitude">
+        <h3>Gratitude Journal</h3>
+        <p>Reflect on blessings</p>
+      </div>
+    </div>
+
+    <!-- Content Display Area -->
+    <div id="contentBox" class="card" style="display:none; margin-top:2rem; padding:1.5rem;"></div>
+
+    <!-- Fixed Buttons -->
+    <div class="fixed-buttons">
+      <button onclick="handleEmergency()">🚨 Emergency SOS</button>
+      <button onclick="window.location.href='../index.html'">🏠 Home</button>
+      <button onclick="goBack()">🔙 Back</button>
+    </div>
+  </div>
+
+  <script>
+    // Universal Content Functions
+    async function showDailyInspiration() {
+      const quotes = [
+        "Peace comes from within. Do not seek it without. - Buddha",
+        "The soul becomes dyed with the color of its thoughts. - Marcus Aurelius",
+        "You are the universe expressing itself as a human for a little while. - Alan Watts"
+      ];
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      
+      document.getElementById('contentBox').innerHTML = `
+        <h3>💫 Today's Inspiration</h3>
+        <p class="universal-quote">"${randomQuote}"</p>
+        <button onclick="speakText('${randomQuote}')">🔊 Hear This</button>
+        <button onclick="shareQuote('${randomQuote}')">📤 Share</button>
+        <button onclick="hideContent()">Close</button>
+      `;
+      document.getElementById('contentBox').style.display = 'block';
+    }
+
+    function showMindfulness() {
+      document.getElementById('contentBox').innerHTML = `
+        <h3>🧘‍♂️ 5-Minute Mindfulness</h3>
+        <ol class="mindfulness-steps">
+          <li>Find a comfortable position</li>
+          <li>Close your eyes and breathe naturally</li>
+          <li>Notice the sensations in your body</li>
+          <li>When thoughts arise, gently return to breath</li>
+          <li>Slowly open your eyes when ready</li>
+        </ol>
+        <button onclick="startGuidedMeditation()">▶️ Begin Guided Session</button>
+        <button onclick="hideContent()">Close</button>
+      `;
+      document.getElementById('contentBox').style.display = 'block';
+    }
+
+    function hideContent() {
+      document.getElementById('contentBox').style.display = 'none';
+    }
+  </script>
+  <script src="../script.js"></script>
+</body>
+</html>

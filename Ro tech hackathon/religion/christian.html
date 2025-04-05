@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Christian Mode - SeniorMate</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Christian Mode</h1>
+    <p class="subtitle">Prayers and Spiritual Guidance</p>
+
+    <div class="grid">
+      <div class="card" onclick="showDailyPrayer()">
+        <!-- <img src="../assets/cross.png" alt="Prayers"> -->
+        <h3>Daily Prayers</h3>
+        <p>Morning and evening prayers</p>
+      </div>
+      <div class="card" onclick="showBibleVerse()">
+        <!-- <img src="../assets/bible.png" alt="Bible"> -->
+        <h3>Bible Verse</h3>
+        <p>Today's scripture</p>
+      </div>
+      <div class="card" onclick="showHymns()">
+        <!-- <img src="../assets/hymn.png" alt="Hymns"> -->
+        <h3>Hymns</h3>
+        <p>Inspirational songs</p>
+      </div>
+      <div class="card" onclick="showSermons()">
+        <!-- <img src="../assets/sermon.png" alt="Sermons"> -->
+        <h3>Sermons</h3>
+        <p>Spiritual talks</p>
+      </div>
+    </div>
+
+    <div id="contentBox" style="display:none"></div>
+  </div>
+
+  <script src="../christian.js"></script>
+  
+</body>
+</html>

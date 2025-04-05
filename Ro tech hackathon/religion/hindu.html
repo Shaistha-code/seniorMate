@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hindu Mode - SeniorMate</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    #contentBox ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  </style>
+</head>
+<body class="hindu-mode">
+  <div class="container">
+    <header>
+      <h2>🕉️ Hindu Mode</h2>
+    </header>
+
+    <div class="grid">
+      <div class="card" id="dailyPrayerCard">
+        <h3>🕉️ Daily Pooja Timings</h3>
+        <p>Check typical morning and evening pooja schedules.</p>
+      </div>
+
+      <div class="card">
+        <h3>📺 Spiritual Talks</h3>
+        <p>Watch spiritual guidance from revered gurus.</p>
+      </div>
+
+      <div class="card">
+        <h3>📖 Gita Verses</h3>
+        <p>Read a random motivational verse from the Bhagavad Gita.</p>
+      </div>
+
+      <div class="card">
+        <h3>🙏 Mantras</h3>
+        <p>Daily chants to bring peace and focus to your day.</p>
+      </div>
+    </div>
+
+    <div id="contentBox" style="display: none;"></div>
+  </div>
+
+  <script>
+    const gitaVerses = [
+      {
+        verse: "You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+        chapter: "Chapter 2, Verse 47"
+      },
+      {
+        verse: "When meditation is mastered, the mind is unwavering like the flame of a lamp in a windless place.",
+        chapter: "Chapter 6, Verse 19"
+      },
+      {
+        verse: "A person is said to be elevated in yoga when, having renounced all material desires, he neither acts for sense gratification nor engages in fruitive activities.",
+        chapter: "Chapter 6, Verse 4"
+      },
+      {
+        verse: "There is neither this world nor the world beyond nor happiness for the one who doubts.",
+        chapter: "Chapter 4, Verse 40"
+      }
+    ];
+  
+    function showGitaVerse() {
+      const grid = document.querySelector(".grid");
+      const contentBox = document.getElementById("contentBox");
+      if (grid) grid.style.display = "none";
+  
+      const randomVerse = gitaVerses[Math.floor(Math.random() * gitaVerses.length)];
+  
+      contentBox.innerHTML = `
+        <div class="card">
+          <h3>📖 Gita Verse</h3>
+          <p style="font-size: 1.2rem; font-style: italic;">"${randomVerse.verse}"</p>
+          <p><strong>${randomVerse.chapter}</strong></p>
+          <button onclick="showGitaVerse()">🔁 New Verse</button>
+          <button onclick="goBack()">🔙 Go Back</button>
+        </div>
+      `;
+      contentBox.style.display = "block";
+    }
+  
+    function showPoojaTimings() {
+      const grid = document.querySelector(".grid");
+      const contentBox = document.getElementById("contentBox");
+      if (grid) grid.style.display = "none";
+  
+      contentBox.innerHTML = `
+        <div class="card">
+          <h3>🕉️ Daily Pooja Timings</h3>
+          <ul style="text-align: left;">
+            <li><strong>🪔 Morning Pooja:</strong> 6:00 AM – 7:30 AM</li>
+            <li><strong>🌞 Midday Aarti:</strong> 12:00 PM – 12:30 PM</li>
+            <li><strong>🌇 Evening Pooja:</strong> 6:30 PM – 7:30 PM</li>
+            <li><strong>🌙 Shayan Aarti:</strong> 9:00 PM</li>
+          </ul>
+          <button onclick="goBack()">🔙 Go Back</button>
+        </div>
+      `;
+      contentBox.style.display = "block";
+    }
+  
+    function showSpiritualTalks() {
+      const grid = document.querySelector(".grid");
+      const contentBox = document.getElementById("contentBox");
+      if (grid) grid.style.display = "none";
+  
+      contentBox.innerHTML = `
+        <div class="card">
+          <h3>📺 Spiritual Talks</h3>
+          <iframe width="100%" height="315"
+            src="https://www.youtube.com/embed/videoseries?list=PLfOWGVMMuHsn9DJcsRUz2NflPkNzC_i5c"
+            title="YouTube playlist" frameborder="0" allowfullscreen>
+          </iframe>
+          <p>Enjoy spiritual wisdom and inspiration from revered teachers.</p>
+          <button onclick="goBack()">🔙 Go Back</button>
+        </div>
+      `;
+      contentBox.style.display = "block";
+    }
+  
+    function showMantras() {
+      const grid = document.querySelector(".grid");
+      const contentBox = document.getElementById("contentBox");
+  
+      if (grid) grid.style.display = "none";
+  
+      contentBox.innerHTML = `
+        <div class="card">
+          <h3>🙏 Daily Mantras</h3>
+          <ul style="text-align: left; line-height: 1.6;">
+            <li><strong>🕉️ Gayatri Mantra:</strong><br>ॐ भूर्भुवः स्वः । तत्सवितुर्वरेण्यं<br>भर्गो देवस्य धीमहि । धियो यो नः प्रचोदयात् ॥</li>
+            <li><strong>🙏 Maha Mrityunjaya Mantra:</strong><br>ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ।<br>उर्वारुकमिव बन्धनान् मृत्योर्मुक्षीय मामृतात् ॥</li>
+            <li><strong>🪔 Ganesh Mantra:</strong><br>ॐ गण गणपतये नमः ॥</li>
+          </ul>
+          <button onclick="goBack()" style="margin-top: 1rem;">🔙 Go Back</button>
+        </div>
+      `;
+      contentBox.style.display = "block";
+    }
+  
+    function goBack() {
+      const grid = document.querySelector(".grid");
+      const contentBox = document.getElementById("contentBox");
+      if (contentBox) contentBox.style.display = "none";
+      if (grid) grid.style.display = "grid";
+    }
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      const prayerCard = document.getElementById("dailyPrayerCard");
+      const talksCard = document.querySelectorAll(".card")[1]; // 2nd card
+      const gitaVerseCard = document.querySelectorAll(".card")[2]; // 3rd card
+      const mantraCard = document.querySelectorAll(".card")[3]; // 4th card
+  
+      if (prayerCard) prayerCard.addEventListener("click", showPoojaTimings);
+      if (talksCard) talksCard.addEventListener("click", showSpiritualTalks);
+      if (gitaVerseCard) gitaVerseCard.addEventListener("click", showGitaVerse);
+      if (mantraCard) mantraCard.addEventListener("click", showMantras);
+    });
+  </script>
+  
+  
+  
+</body>
+</html>

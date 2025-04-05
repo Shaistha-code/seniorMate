@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Islam Mode – SeniorMate</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Islam Mode</h1>
+    <p class="subtitle">Explore spiritual content, prayers, and guidance</p>
+
+    <div class="grid" id="cardGrid">
+      <div class="card" id="dailyPrayerCard">
+       <!--  <img src="../assets/prayer.png" alt="Daily Prayers"> -->
+        <h3>Daily Prayers</h3>
+        <p>Listen or read your daily prayers</p>
+      </div>
+      
+      <div class="card">
+        <!-- <img src="../assets/spiritual-talks.png" alt="Spiritual Talks"> -->
+        <h3>Spiritual Talks</h3>
+        <p>Comforting stories and guidance</p>
+      </div>
+      <div class="card">
+        <!-- <img src="../assets/quran.png" alt="Quran"> -->
+        <h3>Scriptures</h3>
+        <p>Access holy texts and verses</p>
+      </div>
+      <div class="card">
+        <!-- <img src="../assets/mindfulness.png" alt="Mindfulness & Duas"> -->
+        <h3>Mindfulness & Duas</h3>
+        <p>Peaceful duas and breathing reflections</p>
+      </div>
+    </div>
+
+    <!-- OUTSIDE the grid so it doesn’t get added inside again -->
+    <div id="prayerTimesBox" class="card" style="display: none; margin-top: 1rem;"></div>
+
+    <div class="chat-container">
+      <h2>🧠 Ask Anything</h2>
+      <div class="chat-box" id="chatBox">
+        <!-- Messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="fixed-buttons">
+    <button onclick="handleEmergency()">🚨 Emergency SOS</button>
+    <button onclick="handleContact()">📞 Contact Us</button>
+    <button onclick="goBack()">🔙 Back</button>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
