@@ -1,0 +1,45 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>SeniorMate – Your Everyday Companion</title> <link rel="stylesheet" href="style.css" /> </head> <body> <div class="container"> <h1>SeniorMate</h1> <p class="subtitle">Please choose a mode</p>
+ 
+  <div class="grid">
+    <!-- Mode Cards -->
+    <div class="card" onclick="openMode('religious')">
+      <img src="assests/religious.png" alt="Religious Mode"/>
+      <h3>Religious Mode</h3>
+      <p>Prayers, spiritual talks</p>
+    </div>
+    <div class="card" onclick="openMode('wellness')">
+      <img src="assests/wellness.png" alt="Wellness Mode"/>
+      <h3>Wellness Mode</h3>
+      <p>Health, exercises, safety</p>
+    </div>
+    <div class="card" onclick="openMode('info')">
+      <img src="assests/info.png" alt="Info Mode"/>
+      <h3>Info Mode</h3>
+      <p>Ask anything</p>
+    </div>
+    <div class="card" onclick="openMode('ordering')">
+      <img src="assests/order.png" alt="Ordering Mode"/>
+      <h3>Ordering Mode</h3>
+      <p>Groceries, medicines</p>
+    </div>
+    <div class="card" onclick="openMode('entertainment')">
+      <img src="assests/entertainment.png" alt="Entertainment"/>
+      <h3>Entertainment</h3>
+      <p>Music, jokes, stories</p>
+    </div>
+    <div class="card" onclick="openMode('updates')">
+      <img src="assests/dailyupdates.png" alt="Daily Updates"/>
+      <h3>Daily Updates</h3>
+      <p>News, government schemes</p>
+    </div>
+  </div>
+  
+  <!-- ChitChat card below all modes -->
+  <div class="chitchat-wrapper">
+    <div class="card card-large" onclick="openMode('chitchat')">
+      
+      <h3>ChitChat</h3>
+      <p>Talk freely with your assistant</p>
+    </div>
+  </div>
+  </div> <!-- Fixed Footer Buttons --> <div class="fixed-buttons"> <button onclick="handleEmergency()">🚨 Emergency SOS</button> <button onclick="handleContact()">📞 Contact Us</button> <button onclick="changeMode()">🔄 Change Mode</button> </div> <script src="script.js"></script> </body> </html>

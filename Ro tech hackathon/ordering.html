@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ordering Mode - SeniorMate</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .category-title {
+      margin-top: 30px;
+      font-size: 1.5rem;
+      text-align: left;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .card {
+      text-align: center;
+      border: none;
+      background: transparent;
+      padding: 10px;
+      transition: transform 0.2s;
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .card p {
+      margin-top: 10px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    .card:link,
+    .card:visited,
+    .card:hover,
+    .card:active {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🛍️ Ordering Mode</h1>
+    <p class="subtitle">Tap an icon to open the app or website</p>
+
+    <!-- Medicine -->
+    <h2 class="category-title">🩺 Medicine</h2>
+    <div class="grid">
+      <a href="https://www.medplusmart.com/?srsltid=AfmBOoppY1YP4ZrjgNgk8FIYlOIwAcA8PDvGzXH2c8MHDTpVYPlHDd6A" target="_blank" class="card">
+        <img src="../assests/med mart.png" alt="MedMart">
+        <p>MedMart</p>
+      </a>
+      <a href="https://pharmeasy.in/" target="_blank" class="card">
+        <img src="../assests/pe.png" alt="PharmEasy">
+        <p>PharmEasy</p>
+      </a>
+      <a href="https://www.1mg.com/drugs/gala-mg1-tablet-pr-239533?srsltid=AfmBOoqRfFRLAathk7514XekaiX-qw2qJZKZP3NVjYmVzdtfthVSgr5x&wpsrc=Google+Organic+Search" target="_blank" class="card">
+        <img src="../assests/Screenshot 2025-04-05 172656.png" alt="1mg">
+        <p>1mg</p>
+      </a>
+    </div>
+
+    <!-- Food Delivery -->
+    <h2 class="category-title">🍽️ Food Delivery</h2>
+    <div class="grid">
+      <a href="https://www.zomato.com" target="_blank" class="card">
+        <img src="../assests/zomato.png" alt="Zomato">
+        <p>Zomato</p>
+      </a>
+      <a href="https://www.swiggy.com" target="_blank" class="card">
+        <img src="../assests/sw.png" alt="Swiggy">
+        <p>Swiggy</p>
+      </a>
+    </div>
+
+    <!-- Shopping -->
+    <h2 class="category-title">🛒 Shopping</h2>
+    <div class="grid">
+      <a href="https://www.amazon.in" target="_blank" class="card">
+        <img src="../assests/amazon.png" alt="Amazon">
+        <p>Amazon</p>
+      </a>
+      <a href="https://www.flipkart.com" target="_blank" class="card">
+        <img src="../assests/flipkart.png" alt="Flipkart">
+        <p>Flipkart</p>
+      </a>
+      <a href="https://www.bigbasket.com" target="_blank" class="card">
+        <img src="../assests/bb.png" alt="BigBasket">
+        <p>BigBasket</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

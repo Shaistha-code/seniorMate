@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wellness Mode - SeniorMate</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #f0f9f4;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .info-box {
+      display: none;
+      margin-top: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    .info-box h2 {
+      margin-top: 0;
+      color: #1e7e34;
+    }
+
+    .back-btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 8px 16px;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .back-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧘 Wellness Mode</h1>
+    <p class="subtitle">Health and Wellbeing Resources</p>
+
+    <div class="grid" id="grid">
+      <div class="card" onclick="showContent('exercises')">
+      <!--   exercise.png" alt="Ex<img src="assets/ercises"> -->
+        <h3>Gentle Exercises</h3>
+        <p>Senior-friendly routines</p>
+      </div>
+      <div class="card" onclick="showContent('meds')">
+        <!-- <img src="assets/meds.png" alt="Medication"> -->
+        <h3>Medication Tracker</h3>
+        <p>Set reminders</p>
+      </div>
+      <div class="card" onclick="showContent('nutrition')">
+        <!-- <img src="assets/nutrition.png" alt="Nutrition"> -->
+        <h3>Nutrition Guide</h3>
+        <p>Healthy eating tips</p>
+      </div>
+      <div class="card" onclick="showContent('emergency')">
+        <!-- <img src="assets/emergency.png" alt="Emergency"> -->
+        <h3>Health Emergency</h3>
+        <p>Quick access info</p>
+      </div>
+    </div>
+
+    <!-- Info box that replaces grid -->
+    <div id="info" class="info-box">
+      <h2 id="info-title">Title</h2>
+      <p id="info-content">Content goes here...</p>
+      <div class="back-btn" onclick="goBack()">← Back</div>
+    </div>
+  </div>
+
+  <script>
+    const grid = document.getElementById("grid");
+    const info = document.getElementById("info");
+    const infoTitle = document.getElementById("info-title");
+    const infoContent = document.getElementById("info-content");
+
+    function showContent(type) {
+      grid.style.display = "none";
+      info.style.display = "block";
+
+      if (type === 'exercises') {
+        infoTitle.innerText = "Gentle Exercises";
+        infoContent.innerHTML = `
+          Try these daily:<br>
+          • Morning stretches<br>
+          • Seated leg lifts<br>
+          • Arm circles<br>
+          • Light walking indoors
+        `;
+      } else if (type === 'meds') {
+        infoTitle.innerText = "Medication Tracker";
+        infoContent.innerHTML = `
+          Use apps like Medisafe, or simply<br>
+          • Set alarms on your phone<br>
+          • Tick off from a checklist<br>
+          • Keep weekly pill boxes
+        `;
+      } else if (type === 'nutrition') {
+        infoTitle.innerText = "Nutrition Guide";
+        infoContent.innerHTML = `
+          Eat smart:<br>
+          • Drink 8 glasses of water<br>
+          • Eat fruits and veggies daily<br>
+          • Avoid processed snacks<br>
+          • Eat smaller meals more often
+        `;
+      } else if (type === 'emergency') {
+        infoTitle.innerText = "Health Emergency";
+        infoContent.innerHTML = `
+          Be prepared:<br>
+          • Save emergency contact numbers<br>
+          • Keep medical records handy<br>
+          • Know the nearest hospital<br>
+          • Use the SOS button if needed
+        `;
+      }
+    }
+
+    function goBack() {
+      info.style.display = "none";
+      grid.style.display = "grid";
+    }
+  </script>
+</body>
+</html>

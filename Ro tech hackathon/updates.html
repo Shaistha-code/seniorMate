@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News & Govt. Updates - SeniorMate</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .category-title {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      text-align: left;
+      border-left: 6px solid #28a745;
+      padding-left: 12px;
+      color: #333;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 25px;
+      margin: 20px 0;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 15px;
+      transition: transform 0.2s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #ddd;
+      padding: 5px;
+      background-color: #fff;
+    }
+
+    .card p {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📰 News & Government Updates</h1>
+    <p class="subtitle">Click on a card to stay informed</p>
+
+    <!-- Government Schemes -->
+    <h2 class="category-title">📜 Govt. Schemes</h2>
+    <div class="grid">
+      <a href="https://www.india.gov.in/my-government/schemes" target="_blank" class="card">
+        <img src="https://www.logopeople.in/wp-content/uploads/2013/01/government-of-india.jpg" alt="India Gov">
+        <p>India Gov</p>
+      </a>
+      <a href="https://www.pmindia.gov.in/en/major_initiatives/" target="_blank" class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhX7tzJFgAsYEoGp88rikSwV_ea6wU8509pQ&s" alt="PM Initiatives">
+        <p>PM Initiatives</p>
+      </a>
+    </div>
+
+    <!-- News Portals -->
+    <h2 class="category-title">🗞️ News Portals</h2>
+    <div class="grid">
+      <a href="https://www.bbc.com/news" target="_blank" class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeYiXkQjWabCZhng8YPZTU97pL04_V5PQ6Qg&s" alt="BBC News">
+        <p>BBC</p>
+      </a>
+      <a href="https://www.ndtv.com" target="_blank" class="card">
+        <img src="https://cdn.ndtv.com/common/images/ogndtv.png" alt="NDTV">
+        <p>NDTV</p>
+      </a>
+      <a href="https://timesofindia.indiatimes.com" target="_blank" class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3AFHQut9f_8B2I0XMYv6q9D-RuWD9Nj9tQA&s" alt="TOI">
+        <p>Times of India</p>
+      </a>
+    </div>
+
+    <!-- COVID or Health Updates (Optional) -->
+    <h2 class="category-title">🧬 Health & Emergency Updates</h2>
+    <div class="grid">
+      <a href="https://www.mohfw.gov.in" target="_blank" class="card">
+        <img src="https://ibdc.rcb.res.in/sewagedata/assets/img/mohfw.png" alt="MoHFW">
+        <p>MoHFW</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

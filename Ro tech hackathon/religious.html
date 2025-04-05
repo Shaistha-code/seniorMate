@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Religious Mode – SeniorMate</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Religious Mode</h1>
+    <p class="subtitle">Please select your religion</p>
+
+    <div class="grid">
+      <div class="card" onclick="selectReligion('islam')">
+       <!--  <img src="images/islam.png" alt="Islam"> -->
+        <h3>Islam</h3>
+      </div>
+      <div class="card" onclick="selectReligion('hinduism')">
+        <!-- <img src="images/hindu.png" alt="Hinduism"> -->
+        <h3>Hinduism</h3>
+      </div>
+      <div class="card" onclick="selectReligion('christianity')">
+        <!-- <img src="images/christian.png" alt="Christianity"> -->
+        <h3>Christianity</h3>
+      </div>
+      <div class="card" onclick="selectReligion('other')">
+       <!--  <img src="images/other.png" alt="Other"> -->
+        <h3>Other</h3>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  
+  function selectReligion(religion) {
+    console.log(`Selected religion: ${religion}`);
+    localStorage.setItem('selectedReligion', religion);
+    const religionMapping = {
+      islam: 'muslim',
+      hinduism: 'hindu',
+      christianity: 'christian',
+      other: 'other'
+    };
+    const fileName = religionMapping[religion] || religion;
+    window.location.href = `religion/${fileName}.html`;
+}
+
+</script>
+
+
+</body>
+</html>
